@@ -1,0 +1,27 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "nginx-2"
+  namespace: "default"
+  labels:
+    app: "nginx-2"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "nginx-2"
+  template:
+    metadata:
+      labels:
+        app: "nginx-2"
+    spec:
+      volumes:
+        - name: app-storage
+          persistentVolumeClaim:
+            claimName: my-pvc2   
+      containers:
+        - name: container202
+          image: us-central1-docker.pkg.dev/csci5409-389802/docker/container202:latest
+          volumeMounts:
+            - mountPath: "./falgun_PV_dir/"
+              name: app-storage
