@@ -10,7 +10,7 @@ const csv = require('csv-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
-
+res.send("WORKINGG....")
 });
 
 app.post('/calculateAmount', (req, res) => {
