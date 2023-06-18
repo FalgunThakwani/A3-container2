@@ -46,7 +46,7 @@ app.post('/calculateAmount', (req, res) => {
           if(row_product==product){
             sum+=parseInt(row_amount);
           }
-          console.log('Product:', row_product);
+          console.log('Product', row_product);
           console.log('Amount:', row_amount);
         }
       })
